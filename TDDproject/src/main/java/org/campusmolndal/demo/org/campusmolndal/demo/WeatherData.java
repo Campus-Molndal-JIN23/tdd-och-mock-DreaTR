@@ -1,5 +1,14 @@
 package org.campusmolndal.demo.org.campusmolndal.demo;
 
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.when;
+import static org.testng.AssertJUnit.assertEquals;
+
 public class WeatherData {
     private double temperature;
     private String weatherDescription;
@@ -19,4 +28,6 @@ public class WeatherData {
     public double getWindSpeed() {
         return windSpeed;
     }
+
+
 }
