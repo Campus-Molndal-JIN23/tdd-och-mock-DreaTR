@@ -1,49 +1,51 @@
-package org.campusmolndal.demo;
-import org.json.JSONObject;
+package org.campusmolndal.demo.org.campusmolndal.demo;
+
+import org.campusmolndal.demo.org.campusmolndal.demo.ExternalWeatherService;
+import org.campusmolndal.demo.org.campusmolndal.demo.WeatherData;
 
 public class WeatherService {
 
     private final ExternalWeatherService externalWeatherService;
     private final String defaultLocation = "Stockholm";
+    private WeatherData weatherData;
 
-    public WeatherService (ExternalWeatherService externalWeatherService){
-
+    public WeatherService(ExternalWeatherService externalWeatherService) {
         this.externalWeatherService = externalWeatherService;
+        updateWeatherData();
     }
-    public double getTemperature(){
-        String json = externalWeatherService.getWeatherData(defaultLocation);
-        return parseTemperatureFromJson(json);
+
+    private void updateWeatherData() {
+        String weatherJson = externalWeatherService.getWeatherData(defaultLocation);
+        weatherData = parseWeatherDataFromJson(weatherJson);
+    }
+    private WeatherData parseWeatherDataFromJson(String json) {
+
+        double temperature = extractValueFromJson(json, "\"temp\":", ",");
+        String weatherDescription = String.valueOf(extractValueFromJson(json, "\"description\":\"", "\""));
+        double windSpeed = extractValueFromJson(json, "\"speed\":", ",");
+
+        return new WeatherData(temperature, weatherDescription, windSpeed);
+    }
+    private double extractValueFromJson(String json, String startKey, String endKey) {
+        int startIndex = json.indexOf(startKey);
+        if (startIndex != -1) {
+            startIndex += startKey.length();
+            int endIndex = json.indexOf(endKey, startIndex);
+            if (endIndex != -1) {
+                String valueString = json.substring(startIndex, endIndex).trim();
+                return Double.parseDouble(valueString);
+            }
+        }
+        return 0.0;
+    }
+    public double getTemperature() {
+        return weatherData.getTemperature();
     }
     public String getWeatherDescription() {
-        String json = externalWeatherService.getWeatherData(defaultLocation);
-        return parseWeatherDescriptionFromJson(json);
+        return weatherData.getWeatherDescription();
     }
     public double getWindSpeed() {
-        String json = externalWeatherService.getWeatherData(defaultLocation);
-        return parseWindSpeedFromJson(json);
+        return weatherData.getWindSpeed();
     }
-    private double parseTemperatureFromJson(String json) { // Marcus was here
-        JSONObject  jsonObject = new JSONObject(json);
-        JSONObject main = jsonObject.getJSONObject("main"); // { "main": { "temp": 25.5 } }
-        return main.getDouble("temp");
-    }
-    private String parseWeatherDescriptionFromJson(String json) {
-        JSONObject  jsonObject = new JSONObject (json);
-        return jsonObject.get("weather").get(String.valueOf(0)).get("description").getAsString();
-    }
-    private double parseWindSpeedFromJson(String json) {
-        JSONObject  jsonObject = new JSONObject  (json);
-        return jsonObject.get("wind").get("speed").getAsDouble();
-    }
-    public String getAsString() {
-        return externalWeatherService.getWeatherData(defaultLocation);
-    }
-    public long getSunsetTime() {
-        return getSunsetTime();
-    }
-    public long getSunriseTime() {
-        return getSunriseTime();
-    }
-
 
 }
