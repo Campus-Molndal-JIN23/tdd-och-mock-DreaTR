@@ -2,11 +2,6 @@
 <module type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-<<<<<<< HEAD
-    <content url="file://$MODULE_DIR$" />
-    <orderEntry type="inheritedJdk" />
-    <orderEntry type="sourceFolder" forTests="false" />
-=======
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/TDDproject/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/TDDproject/src/main/java/org/campusmolndal/demo" isTestSource="false" />
@@ -27,6 +22,8 @@
     </orderEntry>
     <orderEntry type="library" name="mockito.core" level="project" />
     <orderEntry type="library" name="junit.jupiter.engine" level="project" />
->>>>>>> e48c5451e92bab14b9ee71f39c2bb0cb400362d4
+    <orderEntry type="library" name="Maven: org.json:json:20230227" level="project" />
+    <orderEntry type="library" name="Maven: org.json:json:20230227" level="project" />
+    <orderEntry type="library" name="Maven: org.json:json:20230227" level="project" />
   </component>
 </module>

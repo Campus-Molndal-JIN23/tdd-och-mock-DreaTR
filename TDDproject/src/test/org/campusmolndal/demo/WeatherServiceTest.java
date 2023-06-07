@@ -1,7 +1,11 @@
-package demo;
+package org.campusmolndal.demo;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.campusmolndal.demo.ExternalWeatherService;
+import org.campusmolndal.demo.WeatherService;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
+
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 import static org.junit.jupiter.api.Assertions.*;
@@ -12,9 +16,9 @@ class WeatherServiceTest {
     private WeatherService weatherService;
     private ExternalWeatherService externalWeatherService;
 
-    @Before
+    @BeforeEach
     public void setup() {
-        externalWeatherService = mock(ExternalWeatherService.class);
+        externalWeatherService = Mockito.mock(ExternalWeatherService.class);
         weatherService = new WeatherService(externalWeatherService);
     }
     @Test
@@ -44,9 +48,5 @@ class WeatherServiceTest {
         assertEquals(expectedDescription, actualDescription);
 
     }
-
-
-
-
 
 }

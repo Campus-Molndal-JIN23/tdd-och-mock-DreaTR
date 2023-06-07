@@ -1,3 +1,6 @@
+package org.campusmolndal.demo;
+import org.json.JSONObject;
+
 public class WeatherService {
 
     private final ExternalWeatherService externalWeatherService;
@@ -19,16 +22,17 @@ public class WeatherService {
         String json = externalWeatherService.getWeatherData(defaultLocation);
         return parseWindSpeedFromJson(json);
     }
-    private double parseTemperatureFromJson(String json) {
-        JsonObject jsonObject = new JsonObject(json);
-        return jsonObject.get("main").get("temp").getAsDouble();
+    private double parseTemperatureFromJson(String json) { // Marcus was here
+        JSONObject  jsonObject = new JSONObject(json);
+        JSONObject main = jsonObject.getJSONObject("main"); // { "main": { "temp": 25.5 } }
+        return main.getDouble("temp");
     }
     private String parseWeatherDescriptionFromJson(String json) {
-        JsonObject jsonObject = new JsonObject(json);
+        JSONObject  jsonObject = new JSONObject (json);
         return jsonObject.get("weather").get(String.valueOf(0)).get("description").getAsString();
     }
     private double parseWindSpeedFromJson(String json) {
-        JsonObject jsonObject = new JsonObject(json);
+        JSONObject  jsonObject = new JSONObject  (json);
         return jsonObject.get("wind").get("speed").getAsDouble();
     }
     public String getAsString() {
