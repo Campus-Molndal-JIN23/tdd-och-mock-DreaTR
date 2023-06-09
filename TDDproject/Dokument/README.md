@@ -34,7 +34,6 @@ mock objects, developers can improve test coverage and find bugs and issues more
 - Intellij IDEA Community Edition 2022.1.1
 - Git
 - Github
-- Junit 5
 
 ## Run Locally
 Libraries
@@ -75,3 +74,9 @@ https://github.com/Campus-Molndal-JIN23/tdd-och-mock-DreaTR
 
 
 ## Tests
+Projektet inkluderar även testfall för att verifiera korrekt funktionalitet 
+av WeatherService-klassen. Testerna finns i WeatherServiceTest-klassen och 
+använder JUnit 5-frameworket.
+
+För att köra testerna, ska JUnit 5 vara korrekt konfigurerat i projektet 
+och sedan köra testmetoderna i WeatherServiceTest-klassen.
