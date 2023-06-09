@@ -5,15 +5,19 @@ Test-Driven Development (TDD)
 
 ## Description
 - What was your motivation?
+
 To test a web application that uses an external third-party service to retrieve weather forecasts. The application has a class, WeatherService, that calls the external service and returns a forecast based on a specific location. In addition, i wrote a detailed test report based on my tests.
 
 - Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
+
 The goal of this task was to create a series of tests for the WeatherService using JUnit and mock objects. 
 
 - What problem does it solve?
+
 It contributes to better design of the code, the code becomes testable and tested, you build in quality early and prevent poor quality.
 
 - What did you learn?
+
 Writing robust tests for individual classes in a larger application, as well as writing clear and informative test reports.
 
 TDD can improve code quality by ensuring that the code meets its requirements and functions correctly. It also promotes 
