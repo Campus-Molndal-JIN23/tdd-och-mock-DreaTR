@@ -74,9 +74,11 @@ https://github.com/Campus-Molndal-JIN23/tdd-och-mock-DreaTR
 
 
 ## Tests
-Projektet inkluderar även testfall för att verifiera korrekt funktionalitet 
-av WeatherService-klassen. Testerna finns i WeatherServiceTest-klassen och 
-använder JUnit 5-frameworket.
+The project also includes test cases to verify proper 
+functionality of the WeatherService class. The tests are 
+contained in the WeatherServiceTest class and use the 
+JUnit 5 framework.
 
-För att köra testerna, ska JUnit 5 vara korrekt konfigurerat i projektet 
-och sedan köra testmetoderna i WeatherServiceTest-klassen.
+To run the tests, JUnit 5 must be properly configured in 
+the project and then run the test methods in the WeatherServiceTest 
+class.
