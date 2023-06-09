@@ -2,8 +2,11 @@ package WeatherService;
 
 public class WeatherAPI {
 
+    // Konstruktor för klassen
     public WeatherAPI(){
     }
+
+    // Getters metoder
     public Weather getWeather() {
         return null;
     }

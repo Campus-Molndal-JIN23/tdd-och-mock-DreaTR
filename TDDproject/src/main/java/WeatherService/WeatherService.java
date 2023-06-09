@@ -2,7 +2,7 @@ package WeatherService;
 
 public class WeatherService {
 
-    // Konstruktor
+    // Konstruktor för klassen
     public WeatherService() {
     }
     // Getters metoder för att hämta väderdata

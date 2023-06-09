@@ -18,6 +18,7 @@ public class Weather {
         this.city = city;
         this.country = country;
     }
+    // Jämför objekt och avgör om de är lika eller inte.
     @Override
     public boolean equals(Object obj) {
 
