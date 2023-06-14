@@ -10,6 +10,7 @@ public class Weather {
     private final String city;
     private final String country;
 
+
     // Konstruktor
     public Weather(double temperature, double windSpeed, int clouds, String city, String country) {
         this.temperature = temperature;
@@ -35,5 +36,17 @@ public class Weather {
                 Objects.equals(other.city, city) &&
                 Objects.equals(other.country, country);
 
+    }
+
+    public Object getClouds() {
+        return clouds;
+    }
+
+    public Object getWindspeed() {
+        return windSpeed;
+    }
+
+    public Object getTemerature() {
+        return temperature;
     }
 }

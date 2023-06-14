@@ -5,7 +5,9 @@ public class WeatherAPI {
     // Konstruktor för klassen
     public WeatherAPI(){
     }
-
+    public Object getWeather(){
+        return null;
+    }
     public Object getTemperature() {
         return 20.5;
     }
