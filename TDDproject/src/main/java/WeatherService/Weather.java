@@ -1,4 +1,4 @@
-package main.java.WeatherService;
+package WeatherService;
 
 import java.util.Objects;
 
