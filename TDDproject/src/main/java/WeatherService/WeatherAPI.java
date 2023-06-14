@@ -1,4 +1,4 @@
-package WeatherService;
+package main.java.WeatherService;
 
 public class WeatherAPI {
 
@@ -6,10 +6,6 @@ public class WeatherAPI {
     public WeatherAPI(){
     }
 
-    // Getters metoder
-    public Weather getWeather() {
-        return null;
-    }
     public Object getTemperature() {
         return 20.5;
     }
@@ -18,9 +14,6 @@ public class WeatherAPI {
     }
     public Object getClouds() {
         return 3;
-    }
-    public Object getCountry() {
-        return "Sverige";
     }
 }
 
