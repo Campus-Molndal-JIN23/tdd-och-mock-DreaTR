@@ -4,7 +4,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
-import org.mockito.MockitoAnnotations;
 
 class WeatherServiceTest {
 
@@ -14,7 +13,6 @@ class WeatherServiceTest {
     @BeforeEach
     public void setup() {
         weatherAPI = mock(WeatherAPI.class);
-        MockitoAnnotations.initMocks(this);
 
         weatherService = new WeatherService(weatherAPI);
         Weather mockedWeather = new Weather(20.5, 10.2, 3, "Stockholm", "Sverige");
